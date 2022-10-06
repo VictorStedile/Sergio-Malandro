@@ -1,0 +1,48 @@
+div#site {
+    position: absolute;
+    width: 900px;
+    height: 100%;
+    left: 50%;
+    margin-left: -450px;
+    background-color: lightblue;
+}
+
+div#site div.topo{
+    position: relative;
+    width: 895px;
+    height: 50px;
+    background-color: azure;
+    border: 3px solid black;
+    text-align: center;
+    font-size: 50px;
+}
+
+div#site div.left{
+    position: relative;
+    width: 200px;
+    height: 500px;
+    background-color: azure;
+    margin-top: -3px;
+    border: 3px solid black;
+}
+
+div#site div.right{
+    position: relative;
+    left: 203px;
+    bottom: 506px;
+    width: 692px;
+    height: 500px;
+    background-color: azure;
+    border: 3px solid black;
+}
+
+div#site div.bottom{
+    position: relative;
+    width: 900;
+    height: 40px;
+    background-color: azure;
+    bottom: 509px;
+    border: 3px solid black;
+    text-align: center;
+    font-size: 30px;
+}

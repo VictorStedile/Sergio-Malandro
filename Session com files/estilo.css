@@ -1,0 +1,18 @@
+div#site{
+    position: absolute;
+    width: 900px;
+    height: 100%;
+    left: 50%;
+    margin-left: -450px;
+    background-color: lightblue;
+}
+
+div#site div.topo{
+    position: relative;
+    width: 895px;
+    height: 50px;
+    background-color: azure;
+    border: 3px solid black;
+    text-align: center;
+    font-size: 20px;
+}
