@@ -8,6 +8,6 @@
     else if(isset($_GET['idf'])){
         $id = $_GET['idf'];
         $delete = $conn->query('SET foreign_key_checks = 0; DELETE FROM fornecedores WHERE IDFornecedor = ' . $id);
-        header('location: /Victor/projeto/?pagina=listafornecedores');
+        header('location: /Victor/SERGIO-MALANDRO-1/projeto/?pagina=listafornecedores');
     }
 ?>

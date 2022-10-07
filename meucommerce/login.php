@@ -14,24 +14,30 @@ $dados = $conn->query('SELECT * FROM usuarios');
                 <pre>
 <button name='entrega' class='btn btn-success'>Login</button>    //    <a href="register.php">Register</button></a>
             </pre>
-
-            </form>
-        </div>
-</div>
-
 <?php
 
-if(isset($_Post['entrega'])){
+if(isset($_POST['entrega'])){
+    $erro = false;
     foreach($dados as $row){
-        if($row['login'] === $_Post['user'] && $row['senha'] === $_Post['senha']){
-            echo 'deu certo';
-            break;
+        if($row['login'] === $_POST['user'] && $row['senha'] === $_POST['senha']){
+            session_start();
+
+            $_SESSION['id'] = $row['id'];
+            $_SESSION['nome'] = $row['login'];
+
+            header('location: /Victor/SERGIO-MALANDRO-1/meucommerce/index.php');
         }
         else{
-            echo 'deu erro';
+            if(!$erro){
+                echo 'deu erro';
+                $erro = true;
+            }
         }
-        break;
     }
 }
 
 ?>
+            </form>
+        </div>
+</div>
+
