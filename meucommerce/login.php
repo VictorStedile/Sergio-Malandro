@@ -10,7 +10,7 @@ $dados = $conn->query('SELECT * FROM usuarios');
         <div style='background-color: yellow; position: absolute; left: 700px; top: 280px'>
             <form method="post">
                 User:<input type="text" name="user" id="User"><br>
-                Senha:<input type="text" name="senha" id="Senha"><br><br>
+                Senha:<input type="password" name="senha" id="Senha"><br><br>
                 <pre>
 <button name='entrega' class='btn btn-success'>Login</button>    //    <a href="register.php">Register</button></a>
             </pre>
