@@ -31,12 +31,16 @@ $produtos = $conn->query('SELECT * FROM produtos');
         </div>
     </div>
     <div style="height: 1350px; widhth: 100%">
-        <div style="margin-left: 5px; height: 1350px; width: 220px; background-color: lightyellow">
+        <div style="margin-left: 5px; height: 1350px; width: 260px; background-color: lightyellow">
             <?php include_once('menu.php')?>
         </div>
         <div style='position: absolute; top: 100px; left: 225px; width: 85.8%; height: 1350px'>
             <?php
-                
+            
+            if(isset($_GET['pagina']) && isset($_GET['id'])){
+                include('paginaitem.php');
+            }
+            else{
             if(!isset($_GET['categoria'])){
                 foreach($produtos as $row){?>
 
@@ -71,6 +75,7 @@ $produtos = $conn->query('SELECT * FROM produtos');
                     ?>
                 </div>
             <?php
+            }
             }
             ?>
         </div>
