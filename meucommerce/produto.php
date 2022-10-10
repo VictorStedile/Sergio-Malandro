@@ -17,10 +17,11 @@
     <div style='position: relative; height: 910px; width: 100%'>
         <center>
             <h3>Nome: <?php echo $row['descricao']?></h3>
-            <h3>Caracteristicas: </h3><textarea cols="60" rows="10"><?php echo $row['caracteristicas']?></textarea>
+            <h3>Caracteristicas: </h3><textarea readonly cols="60" rows="10"><?php echo $row['caracteristicas']?></textarea>
             <h3>Categoria: <?php echo $row['descricaocate'] ?></h3>
             <h3>Valor: <?php echo $row['valor']?></h3>
             <h3>Caracteristicas principais: <?php echo $row['resumo']?></h3>
+            <h3>Estoque: <?php echo $row['estoque']?></h3>
         </center>
     </div>
     <?php } ?>

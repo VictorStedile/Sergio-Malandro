@@ -12,7 +12,7 @@ $produtos = $conn->query('SELECT * FROM produtos');
 <div>
     <div style="height: 100px; background-color: lightblue; text-align: center">
         <div>
-            <a href="?">Home</a>
+            <a href="?">Home</a> <a href="?pagina="></a>
         </div>
         <div style='margin-left: 1200px'>
         <?php if(!isset($_SESSION['id'])){?>
@@ -38,13 +38,13 @@ $produtos = $conn->query('SELECT * FROM produtos');
             <?php
             
             if(isset($_GET['pagina']) && isset($_GET['id'])){
-                include('paginaitem.php');
+                include($_GET['pagina'] . '.php');
             }
             else{
             if(!isset($_GET['categoria'])){
                 foreach($produtos as $row){?>
 
-                <div class="card" style="width: 18rem; margin-top: 10px; margin-left: 20px">
+                <div class="card" style="width: 18rem; margin-top: 10px; margin-left: 55px">
                     <img src="<?php echo $row['imagem']; ?>" class="card-img-top" alt="<?php echo $row['descricao']; ?>">
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $row['descricao']; ?></h5>
@@ -63,7 +63,7 @@ $produtos = $conn->query('SELECT * FROM produtos');
                 $consulta_produtos->execute(['id' => $_GET['categoria']]);
 
                 while ($produto = $consulta_produtos->fetch()) { ?>
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 18rem; margin-top: 10px; margin-left: 55px">
                         <img src="<?php echo $produto['imagem']; ?>" class="card-img-top" alt="<?php echo $produto['descricao']; ?>">
                     <div class="card-body">
                             <h5 class="card-title"><?php echo $produto['descricao']; ?></h5>
