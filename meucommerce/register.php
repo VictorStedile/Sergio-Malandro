@@ -40,7 +40,7 @@ if(isset($_POST['entrega'])){
     $_SESSION['id'] = $i;
     $_SESSION['nome'] = $_POST['user'];
 
-    header('location: /SERGIO-MALANDRO/meucommerce/index.php');
+    header('location: /Victor/SERGIO-MALANDRO/meucommerce/index.php');
     } catch(error){
         echo error;
     }

@@ -12,7 +12,7 @@ $produtos = $conn->query('SELECT * FROM produtos');
 <div>
     <div style="height: 100px; background-color: lightblue; text-align: center">
         <div>
-            <a href="?">Home</a> <a href="?pagina="></a>
+            <a href="?">Home</a> <a href="?pagina="></a><?php if(isset($_SESSION['id'])){ echo '<a href="?pagina=carrinho">Carrinho</a>'; } ?>
         </div>
         <div style='margin-left: 1200px'>
         <?php if(!isset($_SESSION['id'])){?>
@@ -25,6 +25,7 @@ $produtos = $conn->query('SELECT * FROM produtos');
             if(isset($_POST['sair'])){
                 $_SESSION['id'] = null;
                 header("Refresh:0");
+                session_destroy();
             }
         }
         ?>
@@ -39,6 +40,9 @@ $produtos = $conn->query('SELECT * FROM produtos');
             
             if(isset($_GET['pagina']) && isset($_GET['id'])){
                 include($_GET['pagina'] . '.php');
+            }
+            elseif(isset($_GET['pagina']) && $_GET['pagina'] == 'carrinho'){
+                include('carrinho.php');
             }
             else{
             if(!isset($_GET['categoria'])){

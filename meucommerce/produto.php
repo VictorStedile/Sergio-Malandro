@@ -22,7 +22,19 @@
             <h3>Valor: <?php echo $row['valor']?></h3>
             <h3>Caracteristicas principais: <?php echo $row['resumo']?></h3>
             <h3>Estoque: <?php echo $row['estoque']?></h3>
+            <form method="post"><a href="carrinho.php"><button name='adicionarcar' class='btn btn-dark'>Adicionar ao carrinho</button></form></a>
         </center>
     </div>
-    <?php } ?>
+    <?php } 
+        if(isset($_POST['adicionarcar'])){
+            if(!isset($_SESSION['carrinho'])){
+                $_SESSION['carrinho'] = array();
+                array_push($_SESSION['carrinho'], $_GET['id']);
+            }
+            else{
+                array_push($_SESSION['carrinho'], $_GET['id']);
+            }
+        }
+
+    ?>
 </div>

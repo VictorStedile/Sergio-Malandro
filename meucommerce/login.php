@@ -30,7 +30,7 @@ if(isset($_POST['entrega'])){
             $_SESSION['id'] = $row['id'];
             $_SESSION['nome'] = $row['login'];
 
-            header('location: /SERGIO-MALANDRO/meucommerce/index.php');
+            header('location: /Victor/SERGIO-MALANDRO/meucommerce/index.php');
         }
         else{
             if(!$erro){
