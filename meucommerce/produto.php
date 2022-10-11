@@ -27,13 +27,7 @@
     </div>
     <?php } 
         if(isset($_POST['adicionarcar'])){
-            if(!isset($_SESSION['carrinho'])){
-                $_SESSION['carrinho'] = array();
-                array_push($_SESSION['carrinho'], $_GET['id']);
-            }
-            else{
-                array_push($_SESSION['carrinho'], $_GET['id']);
-            }
+            $_SESSION['carrinho'][] = $_GET['id'];
         }
 
     ?>

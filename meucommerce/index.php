@@ -3,6 +3,9 @@ include_once('conexao.php');
 if(!isset($_SESSION)){
     session_start();
 }
+if(isset($_GET['limpa'])){
+    unset($_SESSION['carrinho']);
+}
 $produtos = $conn->query('SELECT * FROM produtos');
 ?>
 

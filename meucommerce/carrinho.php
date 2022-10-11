@@ -18,7 +18,4 @@
         </center>
 <?php
     }
-    if(isset($_GET['limpa'])){
-        unset($_SESSION['carrinho']);
-    }
 ?>
